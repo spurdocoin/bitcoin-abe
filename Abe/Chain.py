@@ -381,6 +381,20 @@ class Hirocoin(X11Chain):
 
 YAC_START_TIME = 1377557832
 
+
+class Spurdocoin(X11Chain):
+    def __init__(chain, **kwargs):
+        chain.name = 'Spurdocoin'
+        chain.code3 = 'SPUR'
+        chain.address_version = '\x3f'
+        chain.script_addr_vers = '\x05'
+        chain.magic = '\xf9\xbe\xb4\xd9'
+        Chain.__init__(chain, **kwargs)
+
+    datadir_conf_file_name = 'spurdocoin.conf'
+    datadir_rpcport = 21070
+    datadir_p2pport = 10070
+
 class ScryptJaneChain(Chain):
     def block_header_hash(chain, header):
         import yac_scrypt
